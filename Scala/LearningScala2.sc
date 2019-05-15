@@ -70,6 +70,32 @@ object LearningScala2 {
 	 // Write some code that prints out the first 10 values of the Fibonacci sequence.
 	 // This is the sequence where every number is the sum of the two numbers before it.
 	 // So, the result should be 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+	 val totalNum: Int = 10                   //> totalNum  : Int = 10
+	 var n1 = 0                               //> n1  : Int = 0
+	 var n2 = 1                               //> n2  : Int = 1
 	 
+	 for (i <- 1 to totalNum) {
+	 
+	 	if (i == 1) {
+	 		println(n1)
+	 	} else if (i == 2) {
+	 		println(n2)
+	 	} else {
+	 		var n3 = n1 + n2
+	 		n1 = n2
+	 		n2 = n3
+	 		println(n3)
+	 	}                                 //> 0
+                                                  //| 1
+                                                  //| 1
+                                                  //| 2
+                                                  //| 3
+                                                  //| 5
+                                                  //| 8
+                                                  //| 13
+                                                  //| 21
+                                                  //| 34
+	 
+	 }
 	   
 }
