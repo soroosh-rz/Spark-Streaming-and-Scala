@@ -45,6 +45,19 @@ object StreamingRegression {
     
     // Just so we see something happen when training data is received
     trainingData.print()
+    /*
+    (-1.74,[1.66])
+    (1.24,[-1.18])
+    (0.29,[-0.4])
+    (-0.13,[0.09])
+    (-0.39,[0.38])
+    (-1.79,[1.73])
+    (0.71,[-0.77])
+    (1.39,[-1.48])
+    (1.15,[-1.43])
+    (0.13,[-0.07])
+    ...
+    */
     
     // Now we will build up our linear regression model as new training data is received.
     val numFeatures = 1
@@ -58,6 +71,19 @@ object StreamingRegression {
     // the real world you wouldn't have this and would just call predictOn() instead which only expects
     // feature data.
     model.predictOnValues(testData.map(lp => (lp.label, lp.features))).print()
+    /*
+    (-1.74,-0.928048537533223)
+    (1.24,1.126587598065187)
+    (0.29,0.5622861242036519)
+    (-0.13,0.2077890444701233)
+    (-0.39,-0.0020153496578833585)
+    (-1.79,-0.9786909774951558)
+    (0.71,0.8299675925738672)
+    (1.39,1.3436266264734698)
+    (1.15,1.3074534550720893)
+    (0.13,0.32354319295454076)
+    ...
+    */
     
     // Kick it off
     ssc.checkpoint("C:/checkpoint/")
