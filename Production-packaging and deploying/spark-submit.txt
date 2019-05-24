@@ -1,0 +1,13 @@
+Step 1: 
+Package up your Scala project into a JAR file using Export in the IDE
+
+Step 2:
+spark-submit --class <class object that contains your main function>
+             --jars <paths to any dependencies>
+             --files <files you want placed alongside your application>
+             <your JAR file>
+
+Example:
+spark-submit --class com.sundogsoftware.sparkstreaming.PrintTweets
+             --jars c:\spark\lib\spark-examples-1.6.1-hadoop2.6.0.jar 
+             ClusterTweets.jar
